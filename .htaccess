@@ -1,0 +1,10 @@
+# Перенаправление с index.html на index.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^index\.html$ index.php [L,R=301]
+</IfModule>
+
+# Альтернативный вариант, если mod_rewrite не доступен
+<IfModule !mod_rewrite.c>
+    Redirect 301 /index.html /index.php
+</IfModule>
